@@ -1,25 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
-
+import {
+  ProfileCardCollection 
+ } from './ui-components';
+ import {
+  NavBarHeader2 
+ } from './ui-components';
+ import {
+  MarketingFooterBrand 
+ } from './ui-components';
+import { Authenticator, withAuthenticator } from '@aws-amplify/ui-react';
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <NavBarHeader2 width= {"100%"}/>
+          <ProfileCardCollection />
       </header>
+      <MarketingFooterBrand width= {"100%"}/>
     </div>
   );
 }
 
-export default App;
+export default withAuthenticator(App);
