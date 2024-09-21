@@ -24,7 +24,7 @@ export default function ProfileCardCollection(props) {
   const [loading, setLoading] = React.useState(true);
   const [maxViewed, setMaxViewed] = React.useState(1);
   const pageSize = 6;
-  const isPaginated = false;
+  const isPaginated = true;
   React.useEffect(() => {
     nextToken[instanceKey] = "";
     apiCache[instanceKey] = [];
@@ -81,10 +81,11 @@ export default function ProfileCardCollection(props) {
     <div>
       <Collection
         type="grid"
-        searchPlaceholder="Search..."
+        isSearchable="true"
+        searchPlaceholder="Search Karo..."
         templateRows="1fr 1fr"
         autoFlow="column"
-        alignItems="stretch"
+        alignItems="center"
         justifyContent="stretch"
         itemsPerPage={pageSize}
         isPaginated={!isApiPagination && isPaginated}

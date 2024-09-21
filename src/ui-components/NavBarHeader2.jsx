@@ -6,19 +6,10 @@
 
 /* eslint-disable */
 import * as React from "react";
-import {
-  getOverrideProps,
-  useAuthSignOutAction,
-  useNavigateAction,
-} from "./utils";
+import { getOverrideProps, useAuthSignOutAction } from "./utils";
 import { Button, Flex, Icon, Text, View } from "@aws-amplify/ui-react";
 export default function NavBarHeader2(props) {
   const { overrides, ...rest } = props;
-  const frameFiveOnClick = useNavigateAction({
-    target: "_blank",
-    type: "url",
-    url: "",
-  });
   const buttonOnClick = useAuthSignOutAction({ global: false });
   return (
     <Flex
@@ -46,9 +37,6 @@ export default function NavBarHeader2(props) {
         shrink="0"
         position="relative"
         padding="0px 0px 0px 0px"
-        onClick={() => {
-          frameFiveOnClick();
-        }}
         {...getOverrideProps(overrides, "Frame 5")}
       >
         <View
@@ -114,10 +102,10 @@ export default function NavBarHeader2(props) {
         ></Text>
         <Text
           fontFamily="Inter"
-          fontSize="16px"
-          fontWeight="400"
+          fontSize="24px"
+          fontWeight="700"
           color="rgba(13,26,38,1)"
-          lineHeight="24px"
+          lineHeight="36px"
           textAlign="left"
           display="block"
           direction="column"
@@ -130,8 +118,8 @@ export default function NavBarHeader2(props) {
           position="relative"
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
-          children="Products"
-          {...getOverrideProps(overrides, "Products")}
+          children="Add Pet"
+          {...getOverrideProps(overrides, "Add Pet")}
         ></Text>
         <Text
           fontFamily="Inter"
